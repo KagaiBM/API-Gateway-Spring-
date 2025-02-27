@@ -1,0 +1,35 @@
+server:
+  port: 8087
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+    # You can add custom routes here if needed
+    # routes:
+    #  - id: service-one
+    #    uri: lb://SERVICE-ONE
+    #    predicates:
+    #      - Path=/service-one/**
+    #    filters:
+    #      - StripPrefix=1
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    preferIpAddress: true
+
+# Optional logging configuration for debugging
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty: INFO
