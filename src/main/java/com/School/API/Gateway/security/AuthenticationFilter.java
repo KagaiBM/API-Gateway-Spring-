@@ -1,4 +1,4 @@
-package com.School.API.Gateway.security;
+/** package com.School.API.Gateway.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
@@ -49,3 +49,4 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
         // Empty for now
     }
 }
+**/

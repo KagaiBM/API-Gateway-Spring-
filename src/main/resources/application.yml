@@ -6,24 +6,6 @@ spring:
     name: api-gateway
   cloud:
     gateway:
-      routes:
-
-      - id: authentication-service
-        uri: lb://AUTHENTICATION-SERVICE
-        predicates:
-          - Path=/auth/**
-      - id: student-service
-        uri: lb://STUDENT-SERVICE
-        predicates:
-          - Path=/api/students/**
-        filters:
-          - AuthenticationFilter
-      - id: configuration-service
-        uri: lb://CONFIGURATION-SERVICE
-        predicates:
-          - Path=/api/**
-        filters:
-          - AuthenticationFilter
       discovery:
         locator:
           enabled: true
@@ -40,12 +22,5 @@ eureka:
 # Optional logging configuration for debugging
 logging:
   level:
-    root: INFO
-    com.School.API.Gateway.security: INFO
     org.springframework.cloud.gateway: DEBUG
     reactor.netty: INFO
-jwt:
-  secret: ThisIsAReallyReallyReallyReallyReallyReallyReallyReallyReallyReallyLongSecretKeyForHS512
-  expirationMs: 86400000
-
-
